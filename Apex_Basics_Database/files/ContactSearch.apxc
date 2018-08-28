@@ -1,0 +1,25 @@
+/*
+
+ * The Apex class must be called ContactSearch and be in the public scope
+ * The Apex class must have a public static method called searchForContacts
+ * The method must accept two incoming strings as parameters
+ * It should then find any contact that has a last name matching the first string, and mailing postal code (API name: MailingPostalCode) matching the second string
+ * The method should return a list of Contact records of type List that includes the ID and Name fields
+
+*/
+
+public class ContactSearch {
+  public static List < Contact > searchForContacts(String lastName, String postCode) {
+    // find any contact that has a last name matching lastName
+    // AND a MailingPostalCode matching postCode
+
+    List < Contact > matchingContacts = [
+      SELECT Id, FirstName, LastName
+      FROM Contact
+      WHERE LastName =: lastName
+      AND MailingPostalCode =: postCode
+    ];
+
+    return matchingContacts;
+  }
+}
