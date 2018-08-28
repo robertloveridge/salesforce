@@ -1,23 +1,23 @@
 // Create a dummy account and related contact
 Account newAccount = new Account(
-    Name='Enigma Coding',
-    NumberOfEmployees=1,
-    BillingCity='Coventry');
+  Name = 'Enigma Coding',
+  NumberOfEmployees = 1,
+  BillingCity = 'Coventry');
 insert newAccount;
 
 ID newAccountId = newAccount.ID;
 
 // Create a dummy contact that's linked to the account
 Contact newContact = new Contact(
-    FirstName='Robert',
-    LastName='Smith',
-    Department='Development',
-    AccountId=newAccountId);
+  FirstName = 'Robert',
+  LastName = 'Smith',
+  Department = 'Development',
+  AccountId = newAccountId);
 insert newContact;
 
-// Create a dummy lead that's linked to the account
+// Create a dummy lead
 Lead newLead = new Lead(
-    FirstName='Ernie',
-    LastName='Smith',
-	Company='Enigma Coding');
+  FirstName = 'Ernie',
+  LastName = 'Smith',
+  Company = 'Enigma Coding');
 insert newLead;
